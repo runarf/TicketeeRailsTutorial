@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 feature 'Creating projects' do
@@ -7,7 +6,7 @@ feature 'Creating projects' do
     click_link 'New Project'
   end
   scenario "can create a project" do
-    fill_in 'Name', with: 'TextMate 2'
+    fill_in 'Name', with: "TextMate 2"
     fill_in 'Description', with: 'A text-editor for OS X'
     click_button 'Create Project'
 

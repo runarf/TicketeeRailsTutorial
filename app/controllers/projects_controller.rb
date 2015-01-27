@@ -1,6 +1,7 @@
 # coding: utf-8
 class ProjectsController < ApplicationController
   def index
+    @projects = Project.all
   end
 
   def new
