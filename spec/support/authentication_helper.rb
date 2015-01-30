@@ -8,6 +8,7 @@ module AuthenticationHelpers
   end
 end
 
+
 RSpec.configure do |c|
   c.include AuthenticationHelpers, type: :feature
 end
