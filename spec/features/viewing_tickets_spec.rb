@@ -9,7 +9,7 @@ feature "Viewing tickets" do
                        description: "Gradients! Starbursts! Oh my!")
     ticket.update(user: user)
     internet_explorer = FactoryGirl.create(:project, name: "Internet Explorer")
-    define_permission!(user, "view", textmate_2)
+    define_permission!(user, "view", internet_explorer)
     #FactoryGirl.create(:project, name: "Internet Explorer")
     FactoryGirl.create(:ticket, project: internet_explorer, title: "Standards compliance",
                        description: "Isn't a joke.")
