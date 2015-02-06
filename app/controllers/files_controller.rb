@@ -1,8 +1,15 @@
 class FilesController < ApplicationController
   before_action :require_signin!
 
+  def new
+    @ticket = Ticket.new
+    asset = @ticket.assets.build
+    render partial: "files/form",
+           locals: { number: params[:number].to_i,
+                     asset: asset }
+  end
 
-  def show
+  def showx
     asset = Asset.find(params[:id])
     if can?(:view, asset.ticket.project)
       send_file asset.asset.path,
