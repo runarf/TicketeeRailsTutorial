@@ -9,8 +9,8 @@ class FilesController < ApplicationController
            locals: { number: params[:number].to_i,
                      asset: asset }
   end
-  
   def show
+
     asset = Asset.find(params[:id])
     if can?(:view, asset.ticket.project)
       send_file asset.asset.path,
