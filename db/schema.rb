@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20150205142203) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "asset"
     t.integer  "ticket_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "content_type"
   end
-  
+
   create_table "permissions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "thing_id"
@@ -42,7 +44,6 @@
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.string   "asset"
   end
 
   add_index "tickets", ["project_id"], name: "index_tickets_on_project_id"
