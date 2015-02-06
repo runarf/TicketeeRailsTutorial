@@ -1,6 +1,7 @@
 class FilesController < ApplicationController
   before_action :require_signin!
 
+
   def show
     asset = Asset.find(params[:id])
     if can?(:view, asset.ticket.project)
