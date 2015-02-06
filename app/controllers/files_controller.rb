@@ -9,6 +9,7 @@ class FilesController < ApplicationController
            locals: { number: params[:number].to_i,
                      asset: asset }
   end
+  
   def show
 
     asset = Asset.find(params[:id])
