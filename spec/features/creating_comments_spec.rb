@@ -42,5 +42,10 @@ feature "Creating comments" do
     within("#ticket .state") do
       expect(page).to have_content("Open")
     end
+
+    within("#comments") do
+      expect(page).to have_content("State: Open")
+    end
+    
   end
 end
