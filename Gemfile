@@ -31,6 +31,8 @@ gem 'fog', '~> 1.16.0'
 
 gem 'rails_12factor', group: :production
 
+gem "active_model_serializers", "=0.8.1"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
