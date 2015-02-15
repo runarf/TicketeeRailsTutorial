@@ -22,4 +22,24 @@ class Ticket < ActiveRecord::Base
       end
     end
   end
+
+  def self.search(query)
+    query      
+      .split(" ") # turns string into array
+      .collect do |query| # transformates the array
+      query.split(":") 
+      end.inject(self) do |klass, (name, q)| # takes the array of things and boils it down to one
+      plural_name = name.pluralize.to_sym
+      association = klass.reflect_on_association(plural_name)
+      association_table = association.klass.arel_table
+
+      if [:has_and_belongs_to_many,
+          :belongs_to].include?(association.macro)
+        joins(name.pluralize.to_sym)
+          .where(association_table["name"].eq(q))
+      else
+        all
+      end
+    end
+  end
 end

@@ -52,7 +52,13 @@ class TicketsController < ApplicationController
     end
   end
 
+  def search
+    @tickets = @project.tickets.search(params[:search])
+    render "projects/show"
+  end
+
   private
+  
   def ticket_params
     params.require(:ticket).permit(:title, :description, :tag_names,
                                    assets_attributes: [:asset])
