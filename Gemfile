@@ -53,3 +53,5 @@ group :test do
 end
 
 gem 'cancan'
+
+gem 'carrierwave'

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'users/index'
   end
 
+  resources :files
+
   root "projects#index"
 
   resources :projects do
