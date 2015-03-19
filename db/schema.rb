@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211071632) do
+ActiveRecord::Schema.define(version: 20150211082735) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "asset"

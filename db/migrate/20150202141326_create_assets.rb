@@ -6,5 +6,7 @@ class CreateAssets < ActiveRecord::Migration
       
       t.timestamps null: false
     end
+
+    remove_column :tickets, :asset
   end
 end
